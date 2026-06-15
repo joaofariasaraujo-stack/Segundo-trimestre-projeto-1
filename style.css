@@ -1,15 +1,15 @@
 :root {
-    --bg-color: #060b08;
-    --card-bg: rgba(12, 22, 17, 0.7);
+    --bg-color: #040806;
+    --card-bg: rgba(10, 20, 15, 0.75);
     --text-color: #e5f5ed;
     --accent-color: #00e676;
     --accent-gradient: linear-gradient(135deg, #00e676 0%, #00b0ff 100%);
-    --border-color: rgba(0, 230, 118, 0.2);
+    --border-color: rgba(0, 230, 118, 0.15);
 }
 
 [data-theme="ultra-eco"] {
     --bg-color: #000000;
-    --card-bg: #090909;
+    --card-bg: #050505;
     --text-color: #9cd1b4;
     --accent-color: #22c55e;
     --accent-gradient: linear-gradient(135deg, #22c55e 0%, #166534 100%);
@@ -17,77 +17,80 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif; scroll-behavior: smooth; }
-body { background-color: var(--bg-color); color: var(--text-color); overflow-x: hidden; }
+body { background-color: var(--bg-color); color: var(--text-color); overflow-x: hidden; position: relative; }
 #progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: var(--accent-gradient); width: 0%; z-index: 1000; }
 
-/* Header & Hero */
-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; position: fixed; width: 100%; top: 0; z-index: 100; backdrop-filter: blur(12px); background: rgba(6, 11, 8, 0.8); }
+/* PLANTAS EM CSS (Design Sustentável de Fundo) */
+.bg-plant {
+    position: absolute; background: linear-gradient(180deg, rgba(0, 230, 118, 0.04), transparent);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); /* Formato de folha geométrica */
+    z-index: -1; pointer-events: none;
+}
+.leaf-1 { width: 300px; height: 400px; top: 15%; left: -50px; transform: rotate(45deg); }
+.leaf-2 { width: 400px; height: 500px; top: 55%; right: -100px; transform: rotate(-35deg); }
+
+/* Header */
+header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; position: fixed; width: 100%; top: 0; z-index: 100; backdrop-filter: blur(12px); background: rgba(4, 8, 6, 0.8); }
 .logo { font-size: 1.6rem; font-weight: 800; } .logo span { color: var(--accent-color); }
 nav a { color: var(--text-color); text-decoration: none; margin-left: 2rem; }
 .btn-theme { background: transparent; border: 1px solid var(--accent-color); color: var(--text-color); padding: 0.5rem 1.2rem; border-radius: 20px; cursor: pointer; }
-.hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; padding-top: 100px; }
+
+/* Hero & Nova Frase */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; padding-top: 120px; }
 .hero-content { max-width: 650px; }
 .badge { background: rgba(0, 230, 118, 0.1); color: var(--accent-color); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: bold; border: 1px solid var(--border-color); }
-.hero-content h1 { font-size: 3.8rem; line-height: 1.1; margin: 1.5rem 0; font-weight: 800; }
+
+.sub-slogan {
+    font-size: 1.4rem; color: #00b0ff; margin-top: 1.5rem; margin-bottom: -0.5rem;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+}
+.hero-content h1 { font-size: 3.5rem; line-height: 1.1; margin: 1rem 0; font-weight: 800; }
 .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.hero-content p { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.8; }
+.hero-content p { font-size: 1.15rem; margin-bottom: 2.5rem; opacity: 0.8; line-height: 1.6; }
 .btn-primary { padding: 1rem 2.2rem; background: var(--accent-gradient); color: #000; text-decoration: none; font-weight: bold; border-radius: 30px; display: inline-block; }
 
-/* Animação do Drone */
-.hero-visual { position: relative; width: 400px; height: 400px; display: flex; align-items: center; justify-content: center; }
-.drone-container { width: 150px; height: 150px; position: relative; animation: float 4s ease-in-out infinite; }
-.drone-core { width: 80px; height: 80px; background: #1a2a22; border: 3px solid var(--accent-color); border-radius: 20px; position: absolute; top: 35px; left: 35px; z-index: 2; }
-.propeller { width: 60px; height: 10px; background: #555; position: absolute; border-radius: 50%; animation: spin 0.2s linear infinite; }
-.p1 { top: 20px; left: 10px; } .p2 { top: 20px; right: 10px; }
-.laser-scanner { position: absolute; bottom: -100px; left: 50%; transform: translateX(-50%); width: 120px; height: 150px; background: linear-gradient(to bottom, rgba(0,230,118,0.4), transparent); clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%); animation: scan 2s ease-in-out infinite alternate; }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-@keyframes spin { 100% { transform: rotate(360deg); } }
-@keyframes scan { 0% { opacity: 0.2; } 100% { opacity: 0.7; } }
+/* Cenário do Drone com Plantas */
+.drone-zone { position: relative; width: 400px; height: 400px; display: flex; align-items: center; justify-content: center; }
+.visual-plant { position: absolute; font-size: 3.5rem; filter: drop-shadow(0 0 10px rgba(0,230,118,0.3)); opacity: 0.8; }
+.vp-left { bottom: 40px; left: 20px; animation: sway 4s ease-in-out infinite alternate; }
+.vp-right { top: 40px; right: 20px; animation: sway 5s ease-in-out infinite alternate-reverse; }
 
-/* Grid de Cards */
+.drone-container { width: 150px; height: 150px; position: relative; animation: float 4s ease-in-out infinite; z-index: 5; }
+.drone-core { width: 80px; height: 80px; background: #122219; border: 3px solid var(--accent-color); border-radius: 20px; position: absolute; top: 35px; left: 35px; z-index: 2; }
+.propeller { width: 60px; height: 10px; background: #555; position: absolute; border-radius: 50%; animation: spin 0.15s linear infinite; }
+.p1 { top: 20px; left: 10px; } .p2 { top: 20px; right: 10px; }
+.laser-scanner { position: absolute; bottom: -120px; left: 50%; transform: translateX(-50%); width: 160px; height: 180px; background: linear-gradient(to bottom, rgba(0,230,118,0.35), transparent); clip-path: polygon(40% 0%, 60% 0%, 100% 100%, 0% 100%); animation: scan 2s ease-in-out infinite alternate; }
+
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes scan { 0% { opacity: 0.1; } 100% { opacity: 0.6; } }
+@keyframes sway { 0% { transform: rotate(-5deg) translateY(0); } 100% { transform: rotate(8deg) translateY(-5px); } }
+
+/* Grid e Impacto */
 .impact-panel, .tech-section { padding: 6rem 5%; text-align: center; }
-.counter-card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 3rem; border-radius: 25px; display: inline-block; }
+.counter-card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 3rem; border-radius: 25px; display: inline-block; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
 .counter { font-size: 4.5rem; font-weight: 900; color: var(--accent-color); }
 .grid-tech { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
-.card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 3rem; border-radius: 25px; transition: 0.4s; text-align: left; cursor: pointer; position: relative; }
-.card:hover { transform: translateY(-10px); border-color: var(--accent-color); }
-.card .icon { font-size: 3rem; margin-bottom: 1.5rem; }
+.card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 3rem; border-radius: 25px; transition: 0.4s; text-align: left; cursor: pointer; }
+.card:hover { transform: translateY(-10px); border-color: var(--accent-color); box-shadow: 0 15px 30px rgba(0, 230, 118, 0.1); }
 .click-prompt { display: block; margin-top: 1.5rem; color: var(--accent-color); font-weight: bold; font-size: 0.9rem; }
 
-/* ESTILO DA JANELA MODAL (Inovação UX) */
-.modal-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px);
-    display: flex; align-items: center; justify-content: center;
-    z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
-}
+/* Modal */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
 .modal-overlay.active { opacity: 1; pointer-events: auto; }
-.modal-content {
-    background: #0d1712; border: 2px solid var(--accent-color);
-    padding: 3rem; border-radius: 30px; max-width: 800px; width: 90%;
-    position: relative; transform: translateY(-50px); transition: transform 0.4s ease;
-}
+.modal-content { background: #08120d; border: 2px solid var(--accent-color); padding: 3rem; border-radius: 30px; max-width: 800px; width: 90%; position: relative; transform: translateY(-50px); transition: transform 0.4s ease; }
 .modal-overlay.active .modal-content { transform: translateY(0); }
 .close-modal { position: absolute; top: 1.5rem; right: 2rem; background: transparent; border: none; color: #fff; font-size: 2.5rem; cursor: pointer; }
-
-/* Container de Opções com Imagens */
 .options-container { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
-.option-box {
-    background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 15px; padding: 1.5rem; cursor: pointer; transition: 0.3s; text-align: center;
-}
-.option-box:hover { border-color: var(--accent-color); background: rgba(0, 230, 118, 0.05); }
-.option-img {
-    width: 100%; height: 140px; background-size: cover; background-position: center;
-    border-radius: 10px; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.1);
-}
-.option-box h4 { margin-bottom: 0.5rem; color: #fff; }
-.option-box p { font-size: 0.85rem; opacity: 0.7; }
+.option-box { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 15px; padding: 1.5rem; cursor: pointer; transition: 0.3s; text-align: center; }
+.option-box:hover { border-color: var(--accent-color); background: rgba(0, 230, 118, 0.04); }
+.option-img { width: 100%; height: 140px; background-size: cover; background-position: center; border-radius: 10px; margin-bottom: 1rem; }
 
 footer { text-align: center; padding: 4rem; opacity: 0.4; border-top: 1px solid var(--border-color); }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .options-container { grid-template-columns: 1fr; }
     .hero { flex-direction: column; text-align: center; }
+    .drone-zone { margin-top: 3rem; }
     nav { display: none; }
 }
