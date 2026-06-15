@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoTech | O Futuro Sustentável</title>
+    <title>AeroAgro | Irrigação Inteligente por Drones</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,59 +11,73 @@
     <div id="progress-bar"></div>
 
     <header>
-        <div class="logo">Eco<span>Tech</span></div>
+        <div class="logo">Aero<span>Agro</span></div>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#tech">Tecnologias</a>
-            <a href="#impacto">Impacto</a>
+            <a href="#home">O Produto</a>
+            <a href="#tech">Tecnologia</a>
+            <a href="#impacto">Economia</a>
         </nav>
-        <button class="btn-theme" id="theme-toggle" aria-label="Mudar tema">🌱 Modo Eco</button>
+        <button class="btn-theme" id="theme-toggle">🌱 Modo Eco</button>
     </header>
 
+    <!-- Hero Section focada em Vendas -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Tecnologia Inteligente. <br><span class="gradient-text">Planeta Vivo.</span></h1>
-            <p>Desenvolvendo o amanhã com soluções de baixo impacto de carbono e máxima eficiência digital.</p>
-            <a href="#tech" class="btn-primary">Explore a Inovação</a>
+            <span class="badge">Lançamento 2026</span>
+            <h1>Sua plantação regada de forma <span class="gradient-text">100% autônoma.</span></h1>
+            <p>Conheça os Drones EcoDrop: sensores térmicos de IA que identificam a sede de cada planta e irrigam com precisão cirúrgica, direto da captação de chuva.</p>
+            
+            <div class="cta-actions">
+                <a href="#contato" class="btn-primary">Solicitar Orçamento</a>
+                <a href="#tech" class="btn-secondary">Como funciona?</a>
+            </div>
         </div>
         <div class="hero-visual">
-            <div class="orb"></div>
+            <!-- Representação futurista do Drone voando em círculos de energia -->
+            <div class="drone-container">
+                <div class="drone-core"></div>
+                <div class="propeller p1"></div>
+                <div class="propeller p2"></div>
+                <div class="laser-scanner"></div>
+            </div>
         </div>
     </section>
 
+    <!-- Painel de Impacto / Economia de Recursos -->
     <section id="impacto" class="impact-panel">
-        <h2>Nosso Impacto Digital Hoje</h2>
+        <h2>Eficiência que gera Lucro e Sustentabilidade</h2>
         <div class="counter-container">
             <div class="counter-card">
-                <span class="counter" id="co2-counter">0</span>
-                <p>Gramas de CO₂ evitados por este site</p>
+                <span class="counter" id="water-counter">0</span>
+                <p>Litros de água economizados hoje por nossa frota ativa</p>
             </div>
         </div>
     </section>
 
+    <!-- Seção de Tecnologias Inovadoras -->
     <section id="tech" class="tech-section">
-        <h2>Pilares da Green Tech</h2>
+        <h2>Inovações do Ecossistema EcoDrop</h2>
         <div class="grid-tech">
             <div class="card">
-                <div class="icon">⚡</div>
-                <h3>Servidores Verdes</h3>
-                <p>Hospedagem 100% alimentada por energia solar e eólica, com resfriamento natural por IA.</p>
+                <div class="icon">☀️</div>
+                <h3>Autonomia Solar Infinita</h3>
+                <p>As asas dos drones são revestidas com película fotovoltaica de grafeno de última geração. Eles recarregam em pleno voo e nunca precisam parar.</p>
             </div>
             <div class="card">
-                <div class="icon">📉</div>
-                <h3>Código Otimizado</h3>
-                <p>Algoritmos eficientes que reduzem o processamento da CPU, economizando a bateria do usuário.</p>
+                <div class="icon">💧</div>
+                <h3>Micro-Irrigação por Névoa</h3>
+                <p>Em vez de jorrar água, o drone aplica uma névoa pressurizada diretamente na raiz e folhas, reduzindo o consumo hídrico em até 85%.</p>
             </div>
             <div class="card">
-                <div class="icon">🔄</div>
-                <h3>Hardware Circular</h3>
-                <p>Dispositivos modulares e fáceis de reparar, combatendo diretamente o lixo eletrônico.</p>
+                <div class="icon">🧠</div>
+                <h3>Visão Computacional IA</h3>
+                <p>Câmeras multiespectrais escaneiam o solo em tempo real. O drone só gasta água na planta que realmente precisa, combatendo o desperdício.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 EcoTech. Feito com código limpo e consciência ecológica.</p>
+        <p>&copy; 2026 AeroAgro Technologies. Automação verde para o futuro da agricultura.</p>
     </footer>
 
     <script src="script.js"></script>
