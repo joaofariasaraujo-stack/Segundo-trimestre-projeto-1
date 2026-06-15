@@ -1,0 +1,257 @@
+/* Variáveis de Cor (Foco em tons escuros para economizar energia) */
+:root {
+    --bg-color: #0b110e;
+    --card-bg: rgba(20, 30, 26, 0.6);
+    --text-color: #e2f0eb;
+    --accent-color: #00ff87;
+    --accent-gradient: linear-gradient(135deg, #00ff87 0%, #60efff 100%);
+    --border-color: rgba(0, 255, 135, 0.2);
+}
+
+/* Tema Ultra-Eco (Ainda mais escuro/econômico) */
+[data-theme="ultra-eco"] {
+    --bg-color: #000000;
+    --card-bg: #0a0a0a;
+    --text-color: #a3b899;
+    --accent-color: #4ade80;
+    --accent-gradient: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+    --border-color: #15803d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
+}
+
+/* Barra de Progresso */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--accent-gradient);
+    width: 0%;
+    z-index: 1000;
+    transition: width 0.1s ease-out;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background: rgba(11, 17, 14, 0.8);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.btn-theme {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-theme:hover {
+    background: var(--accent-gradient);
+    color: #000;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--accent-gradient);
+    color: #0b110e;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0, 255, 135, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 255, 135, 0.4);
+}
+
+/* Orbe Futurista (CSS Art) */
+.orb {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-gradient);
+    border-radius: 50%;
+    filter: blur(30px);
+    opacity: 0.6;
+    animation: pulse 6s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.2) translate(20px, -20px); }
+}
+
+/* Painel de Impacto */
+.impact-panel {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.counter-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.counter-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    max-width: 400px;
+}
+
+.counter {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    display: block;
+}
+
+/* Cards Grid */
+.tech-section {
+    padding: 5rem 5%;
+}
+
+.tech-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.grid-tech {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: 20px;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+}
+
+.card p {
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem;
+    opacity: 0.5;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .hero-visual {
+        margin-top: 3rem;
+    }
+    nav {
+        display: none; /* Simplificado para o exemplo */
+    }
+}
