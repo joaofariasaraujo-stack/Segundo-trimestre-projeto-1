@@ -1,71 +1,130 @@
-/* LOJA DE DRONES */
-.store-section{
-    padding: 6rem 5%;
-    text-align:center;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
-.store-section h2{
-    font-size:3rem;
-    margin-bottom:1rem;
+body{
+background:#f5f5f5;
 }
 
-.drone-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:2rem;
-    margin-top:3rem;
+header{
+background:#111;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
 }
 
-.drone-card{
-    background:var(--card-bg);
-    border:1px solid var(--border-color);
-    border-radius:25px;
-    overflow:hidden;
-    transition:0.4s;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#ff0000;
 }
 
-.drone-card:hover{
-    transform:translateY(-10px);
-    border-color:var(--accent-color);
+header input{
+padding:10px;
+width:40%;
+border:none;
+border-radius:5px;
 }
 
-.drone-card img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
+header button{
+padding:10px 20px;
+background:red;
+color:white;
+border:none;
+cursor:pointer;
 }
 
-.drone-card h3{
-    margin:1rem 0;
-    font-size:1.4rem;
+.hero{
+height:350px;
+background:linear-gradient(
+rgba(0,0,0,.6),
+rgba(0,0,0,.6)
+),
+url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200");
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
 }
 
-.drone-card p{
-    padding:0 1rem;
+.hero h1{
+font-size:48px;
+}
+
+.products{
+padding:40px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
 }
 
 .price{
-    color:var(--accent-color);
-    font-size:2rem;
-    font-weight:800;
-    margin-bottom:1rem;
+font-size:22px;
+color:red;
+font-weight:bold;
+margin:10px 0;
 }
 
-.drone-card button{
-    width:90%;
-    margin:1.5rem auto;
-    display:block;
-    padding:1rem;
-    border:none;
-    border-radius:30px;
-    background:var(--accent-gradient);
-    color:#000;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
+.card button{
+width:100%;
+padding:10px;
+background:#111;
+color:white;
+border:none;
+cursor:pointer;
 }
 
-.drone-card button:hover{
-    transform:scale(1.05);
+.cart-panel{
+position:fixed;
+right:0;
+top:0;
+width:350px;
+height:100%;
+background:white;
+padding:20px;
+box-shadow:-5px 0 10px rgba(0,0,0,.2);
+overflow:auto;
+display:none;
+}
+
+.checkout{
+width:100%;
+padding:15px;
+background:red;
+color:white;
+border:none;
+margin-top:20px;
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+margin:10px 0;
 }

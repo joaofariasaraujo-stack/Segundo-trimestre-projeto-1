@@ -1,40 +1,61 @@
-<section class="store-section" id="loja">
-    <h2>Nossa Loja de Drones</h2>
-    <p>Escolha o drone ideal para sua missão sustentável.</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArenaTacado</title>
 
-    <div class="drone-grid">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        <div class="drone-card">
-            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&q=80" alt="Drone EcoFly Mini">
-            <h3>EcoFly Mini</h3>
-            <p class="price">R$ 1.299</p>
-            <p>Drone compacto para monitoramento agrícola.</p>
-            <button>Comprar Agora</button>
-        </div>
+<header>
+    <div class="logo">ARENATACADO</div>
 
-        <div class="drone-card">
-            <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&q=80" alt="Drone Agro Pro">
-            <h3>Agro Pro X</h3>
-            <p class="price">R$ 3.499</p>
-            <p>Pulverização inteligente e mapeamento por IA.</p>
-            <button>Comprar Agora</button>
-        </div>
+    <input
+    type="text"
+    id="search"
+    placeholder="Buscar produto..."
+    >
 
-        <div class="drone-card">
-            <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?w=600&q=80" alt="Drone Vision">
-            <h3>Vision 4K</h3>
-            <p class="price">R$ 4.999</p>
-            <p>Câmera 4K e sensores avançados.</p>
-            <button>Comprar Agora</button>
-        </div>
+    <button id="cartBtn">
+        🛒 Carrinho (<span id="cartCount">0</span>)
+    </button>
+</header>
 
-        <div class="drone-card">
-            <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?w=600&q=80" alt="Drone EcoMax">
-            <h3>EcoMax Ultra</h3>
-            <p class="price">R$ 8.999</p>
-            <p>Autonomia de 90 minutos e alcance profissional.</p>
-            <button>Comprar Agora</button>
-        </div>
-
-    </div>
+<section class="hero">
+    <h1>Equipamentos Profissionais para MMA</h1>
+    <p>Os melhores acessórios para luta.</p>
 </section>
+
+<section class="products" id="products"></section>
+
+<div class="cart-panel" id="cartPanel">
+
+    <h2>Seu Carrinho</h2>
+
+    <div id="cartItems"></div>
+
+    <h3>
+        Total: R$
+        <span id="total">0.00</span>
+    </h3>
+
+    <h4>Pagamento</h4>
+
+    <select>
+        <option>PIX</option>
+        <option>Cartão de Crédito</option>
+        <option>Boleto</option>
+    </select>
+
+    <button class="checkout">
+        Finalizar Compra
+    </button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
